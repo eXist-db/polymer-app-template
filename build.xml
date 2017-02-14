@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="app-template">
+    <xmlproperty file="expath-pkg.xml"/>
+    <!--<property name="app.name" value=""/>-->
+    <property name="project.version" value="${package(version)}"/>
+    <property name="project.app" value="${package(abbrev)}"/>
+    <property name="build.dir" value="build"/>
+    <target name="xar">
+        <mkdir dir="${build.dir}"/>
+        <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar" excludes="bower.json build.xml ${build.dir}/**, node_modules/**, doc/**, gulpfile.js, package.json"/>
+    </target>
+
+
+    <target name="clean-polymer-build">
+        <delete dir="${build.dir}/unbundled"/>
+        <delete dir="${build.dir}/bundled"/>
+    </target>
+
+    <target name="polymer-build-production" depends="clean-polymer-build">
+        <exec executable="polymer">
+            <arg value="build"/>
+            <arg value="--shell"/>
+            <arg value="index.html"/>
+        </exec>
+    </target>
+
+    <target name="production-xar" depends="polymer-build-production">
+        <mkdir dir="${build.dir}"/>
+
+        <copy file="controller.xql" todir="${build.dir}/bundled"/>
+        <copy file="expath-pkg.xml" todir="${build.dir}/bundled"/>
+        <copy file="configuration.xml" todir="${build.dir}/bundled"/>
+        <copy file="repo.xml" todir="${build.dir}/bundled"/>
+        <copy file="icon.png" todir="${build.dir}/bundled"/>
+        <copydir src="${basedir}/modules" dest="${build.dir}/bundled/modules" />
+        <copydir src="${basedir}/resources" dest="${build.dir}/bundled/resources" />
+
+        <zip basedir="${build.dir}/bundled" destfile="${build.dir}/${project.app}-${project.version}-prod.xar" excludes="demo"/>
+    </target>
+
+    <target name="prepare-project">
+        <replace dir="${basedir}" includes="**/*.*"
+                 token="app-test"
+                 value="app-test"/>
+    </target>
+
+    <target name="new-project">
+        <input
+                message="Please enter new app name:"
+                addproperty="app.name"
+        />
+
+        <echo message="${app.name}"></echo>
+
+        <replace dir="${basedir}" includes="**/*.*"
+                 token="app-template"
+                 value="${app.name}"/>
+    </target>
+</project>
