@@ -11,11 +11,21 @@
     </target>
 
 
+    <!--
+    cleans a the Polymer build directories
+    -->
     <target name="clean-polymer-build">
         <delete dir="${build.dir}/unbundled"/>
         <delete dir="${build.dir}/bundled"/>
     </target>
 
+    <!--
+    produces a production version for Polymer apps. This will compress all imported web components into a single html.
+    This is highly advisable for final distributions as it boils down the package dramatically.
+
+    Note: in the context of a single component this target might be of minor importance but is put here for usage
+     in your own projects.
+    -->
     <target name="polymer-build-production" depends="clean-polymer-build">
         <exec executable="polymer">
             <arg value="build"/>
@@ -24,6 +34,10 @@
         </exec>
     </target>
 
+
+    <!--
+    creates a xar file with optimized Polymer components
+    -->
     <target name="production-xar" depends="polymer-build-production">
         <mkdir dir="${build.dir}"/>
 
@@ -38,13 +52,10 @@
         <zip basedir="${build.dir}/bundled" destfile="${build.dir}/${project.app}-${project.version}-prod.xar" excludes="demo"/>
     </target>
 
-    <target name="prepare-project">
-        <replace dir="${basedir}" includes="**/*.*"
-                 token="app-test"
-                 value="app-test"/>
-    </target>
-
-    <target name="new-project">
+    <!--
+    This should be called once you have unpacked the template app to start your own application.
+    -->
+    <target name="init">
         <input
                 message="Please enter new app name:"
                 addproperty="app.name"

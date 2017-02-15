@@ -1,32 +1,38 @@
 DON'T CLONE THIS BUT USE THE DOWNLOAD OPTION TO SAVE AN ARCHIVE VERSION.
 
-# Blueprint for Polymerized eXistdb app
+# Blueprint for componentized eXistdb apps
 
 ## Purpose of this blueprint
 
-Though apps for eXistdb can be created via eXide directly you'll likely have a more complex setup 
-when developing your frontends.
+THe purpose of this blueprint is to provide a quick way to create new apps and at the same time components (or buidling blocks)
+that are commonly and repeatedly used within applications.
 
-This blueprint gathers the resources that are commonly needed for a full application consisting of 
-frontend and backend parts.
 
-It serves as a kind of checklist and documents the tools to reduce the repeating effort of setting
-up a component or a full application for eXistdb.
+This differs from the eXide wizard in the following aspects:
 
-While not being a setup wizard it may be a first step in that direction and gathers the most 
-important information to work with the toolchain.
+* allows to be deployed as a xar app
+* can be consumed by bower for usage in other apps
 
-The blueprint will still require a lot of manual tweaking but helps out by listing the required 
-steps and explain the involved tools.
+## What's in the box
+
+* a common directory structure
+* all needed configuration files
+* useful tooling
+
+## Before you start
+
+What will be needed up-front:
+
+* a nodejs installation (see below) 
+* if using Polymer an installation of the Polymer CLI (highly recommended)
 
 ## Setting up a new application
-
 
 1. download this blueprint as a zip
 2. create a new directory for your app
 3. unpack the zip to that directory
 4. start over by setting up the toolchain
-5. search/replace over the whole tree and replace '[APP_NAME]' with the name of your new app. (<<excluding this occurrence ;)
+5. call `ant init`. This will ask for a new project name to be used as the app name. The target will substitute all occurences of the string 'app-template' with your project name (shouldn't contain spaces) 
 
 ## Setup the toolchain
 
@@ -47,7 +53,7 @@ Nodejs is used within this project to drive the gulp tasks. These allow to:
 Please refer to the nvm page for installation instruction or use an installation method described
 on the nodejs.org homepage.
 
-### Setup gulp tooling
+### Setup gulp and bower tooling
 
 Execute
 
