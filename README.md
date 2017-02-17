@@ -4,7 +4,7 @@ DON'T CLONE THIS BUT USE THE DOWNLOAD OPTION TO SAVE AN ARCHIVE VERSION.
 
 ## What's in the box
 
-* a common directory structure
+* a common minimal directory structure (more dirs can be added of course)
 * all needed configuration files
 * useful development tooling (bower, gulp, Polymer CLI, Ant)
 
@@ -16,8 +16,10 @@ It's a goal of this app template to simplify the usage of all these tools by pre
 
 What will be needed up-front:
 
+* an installation of eXistdb (3.0 or above recommended)
 * a nodejs installation (see below for instructions) 
 * if using Polymer an installation of the [Polymer CLI](https://www.polymer-project.org/1.0/start/toolbox/set-up) (highly recommended)
+* Apache Ant configured
 
 ## Setting up a new application
 
