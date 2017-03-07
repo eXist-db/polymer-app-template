@@ -63,7 +63,7 @@
 
         <echo message="${app.name}"></echo>
 
-        <replace dir="${basedir}" includes="**/*.*"
+        <replace dir="${basedir}" includes="**/*.*" excludes="build.xml"
                  token="app-template"
                  value="${app.name}"/>
     </target>
