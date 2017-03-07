@@ -28,7 +28,7 @@ Don't be scared by this list. It can be done in 3 minutes.
 1. download this blueprint as a zip
 2. create a new directory for your app
 3. unpack the zip to that directory and cd into it
-4. execute ´npm install' to install bower and gulp support
+4. execute ´npm install' to install bower and gulp support. Note: do NOT bower install yet. This will be done by Polymer CLI. However if you don't intend to use that you'll have to setup bower yourself.
 5. execute ´ant init´ to name your new app. This will put the new name into all needed config files
 6. if you don't intend to use Polymer you can skip the next steps
 7. execute ´polymer init´ to setup for Polymer development (see also below)
