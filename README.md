@@ -55,16 +55,60 @@ Once you got that running execute these:
 1. CLI will ask for name and description
 1. CLI will ask to overwrite index.html. Use 'Y' if ´init´ was called for the first time otherwise 'n'
 1. CLI will ask to overwrite README.md. Choose 'n' to keep this documentation or get the Polymer generated one. (you'll likely use that for own remarks anyway later)
-1. You will need to adapt the ´<link rel="import"...´ statements in the html files generated. (haven't yet found a way to adapt those)
+1. You will need to manually adapt the ´<link rel="import"...´ statements in the index.html file generated. (haven't yet found a way to adapt those)
 
-## What gulp does for you
+ 
+## Where to go from here
+
+After finishing the above instructions you'll have the setup completed.
+
+Time to go for a test and build the xar with:
+
+```ant [xar]```
+
+Then:
+
+1. deploy that xar into your running eXistdb instance via the packagemanager.
+2. open up the app. You should see a simple documentation page not saying much except everything went fine and we have our app alive.
+
+From now on you might want to use ```gulp watch```to automatically sync your local changes
+into eXistdb. This is a very fast and convenient way to develop web components with eXistdb.
+
+CAUTION: there one nifty detail to watch. Your html files that are hosting (importing components via html imports)
+MUST be well-formed html files following the xhtml rules ( meta and link tags have to use closing syntax '/>'). 
+
+The Web Components itself are not well-formed markup and are stored as binary HTML in eXistdb.
+
+For more info about the gulp file see below.
+
+### Starting to work
+
+Your work starts by modifying index.html to probably adapting the script and link pathes if necessary. The generated
+index.html is a standard Polymer documentation page. I usually copy that to 'doc.html' to not loose it and start modifying
+the index.html.
+
+Once index.html is in shape open up your main component file which will be file you created during polymer init (e.g. my-app.html)
+and check the polymer import. This is usually not right in this setting and needs to be adapted once to start with 'bower_components'.
+
+You can now go on with actually implementing your Web Component.
+
+### Going on
+
+Eventually you'll need a new component. Just created new ones via ```polymer init``` again to quickly create one. Don't forget to import
+it whereever its used. 
+
+- happy hackin
+
+## Tooling Reference
+
+### What gulp does for you
 
 [gulpjs](http://gulpjs.com/) is a JavaScript build tool and knows hundreds of 'tasks' to help client-side development.
 
 For eXistdb application development there is a custom existdb plugin (task) that can talk to eXistdb and deploy files
 from a local disk into eXistdb.
 
-### Commands
+#### Commands
 
 ```
 gulp deploy
@@ -83,11 +127,11 @@ gulp watch
 can be started in a terminal once (in the root of your project) and will then watch all files on disk and deploy them into eXistdb
 ONCE THEY'VE CHANGED. This is very convenient if you prefer a workflow 'from workspace to database'.
 
-## What [Polymer CLI](https://www.polymer-project.org/2.0/start/toolbox/set-up) does for you
+### What [Polymer CLI](https://www.polymer-project.org/2.0/start/toolbox/set-up) does for you
 
 Polymer CLI is a powerful tool when working with Polymer. 
 
-### Commands:
+#### Commands:
 
 ```
 polymer init
@@ -126,7 +170,7 @@ actuals tests however should pass. We'll have to look for a more stable solution
 
 The relevant test framework can be found here: [web-component-tester](https://github.com/Polymer/web-component-tester)
 
-## What [Ant](https://ant.apache.org/) does for you
+### What [Ant](https://ant.apache.org/) does for you
 
 Ant (as always in eXistdb app development) does the final packaging as a xar app. In this app template the standard build.xml
 is extended to wrap the ´build` command of the Polymer CLI when the target 'production-xar' is called.
@@ -154,7 +198,7 @@ your app for production deployment.
 
 
 
-## What bower does for you
+### What bower does for you
 
 bowerjs is a client-side dependency management tool. It's widely adapted in the web development world. It works with a 'bower.json' file
 that contains all necessary information. By default all client-side dependencies are kept in a directory called 'bower_components'. In app template
@@ -164,7 +208,7 @@ bower.json will also serve as a meta-information provider when you want to distr
 for use with bower in an external application. If you're interested in this use case please be aware
 that the ignores found in 'bower.json.ignores' are added to bower.json.
 
-### Commands
+#### Commands
 
 ```
 bower install
@@ -188,7 +232,7 @@ in bower.json. if you're installing a development time dependency use ´--save-d
 
 
 
-## Notes on setting up nodejs
+### Notes on setting up nodejs
 
 Note: This is a one-timer - you can skip this step if you got mpm on your system already.
 
