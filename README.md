@@ -2,6 +2,11 @@ DON'T CLONE THIS BUT USE THE DOWNLOAD OPTION TO SAVE AN ARCHIVE VERSION.
 
 # Blueprint for componentized eXistdb apps
 
+## What is it?
+
+An 'componentized' webapp in the eXistdb context is one that uses W3C Web Components specifically using
+the Polymer polyfill library.
+
 ## What's in the box
 
 * a common minimal directory structure (more dirs can be added of course)
