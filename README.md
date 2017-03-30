@@ -31,17 +31,18 @@ What will be needed up-front:
 Don't be scared by this list. It can be done in 3 minutes. 
 
 1. download this blueprint as a zip
-2. create a new directory for your app
-3. unpack the zip to that directory and cd into it
-4. execute ´npm install' to install bower and gulp support. Note: do NOT bower install yet. This will be done by Polymer CLI. However if you don't intend to use that you'll have to setup bower yourself.
-5. execute ´ant init´ to name your new app. This will put the new name into all needed config files
-6. if you don't intend to use Polymer you can skip the next steps
-7. execute ´polymer init´ to setup for Polymer development (see also below)
-8. CLI will ask which kind of template shall be used. Choose one.
-9. CLI will ask for name and description
-10. CLI will ask to overwrite index.html. Use 'Y' if ´init´ was called for the first time 
-11. CLI will ask to overwrite README.md. Choose 'n' to keep this documentation.
-12. You will need to adapt the ´<link rel="import"...´ statements in the html files generated. (haven't yet found a way to adapt those)
+2. unpack the zip in your favorite development folder
+3. this creates a folder with starts with 'app-template-'
+4. rename the folder to give it your new projectname
+5. execute ´npm install' to install bower and gulp support. Note: do NOT bower install yet. This will be done by Polymer CLI. However if you don't intend to use that you'll have to setup bower yourself.
+6. execute ´ant init´ to name your new app. This will put the new name into all needed config files
+7. if you don't intend to use Polymer you can skip the next steps
+8. execute ´polymer init´ to setup for Polymer development (see also below)
+9. CLI will ask which kind of template shall be used. Choose one.
+10. CLI will ask for name and description
+11. CLI will ask to overwrite index.html. Use 'Y' if ´init´ was called for the first time 
+12. CLI will ask to overwrite README.md. Choose 'n' to keep this documentation.
+13. You will need to adapt the ´<link rel="import"...´ statements in the html files generated. (haven't yet found a way to adapt those)
 
 ## What gulp does for you
 
