@@ -64,7 +64,7 @@ gulp watch
 can be started in a terminal once (in the root of your project) and will then watch all files on disk and deploy them into eXistdb
 ONCE THEY'VE CHANGED. This is very convenient if you prefer a workflow 'from workspace to database'.
 
-## What Polymer CLI does for you
+## What [Polymer CLI](https://www.polymer-project.org/2.0/start/toolbox/set-up) does for you
 
 Polymer CLI is a powerful tool when working with Polymer. 
 
@@ -107,7 +107,7 @@ actuals tests however should pass. We'll have to look for a more stable solution
 
 The relevant test framework can be found here: [web-component-tester](https://github.com/Polymer/web-component-tester)
 
-## What Ant does for you
+## What [Ant](https://ant.apache.org/) does for you
 
 Ant (as always in eXistdb app development) does the final packaging as a xar app. In this app template the standard build.xml
 is extended to wrap the ´build` command of the Polymer CLI when the target 'production-xar' is called.
