@@ -97,7 +97,7 @@ You can now go on with actually implementing your Web Component.
 Eventually you'll need a new component. Just created new ones via ```polymer init``` again to quickly create one. Don't forget to import
 it whereever its used. 
 
-- happy hackin
+happy hackin
 
 ## Tooling Reference
 
