@@ -31,18 +31,31 @@ What will be needed up-front:
 Don't be scared by this list. It can be done in 3 minutes. 
 
 1. download this blueprint as a zip
-2. unpack the zip in your favorite development folder
-3. this creates a folder with starts with 'app-template-'
-4. rename the folder to give it your new projectname
-5. execute ´npm install' to install bower and gulp support. Note: do NOT bower install yet. This will be done by Polymer CLI. However if you don't intend to use that you'll have to setup bower yourself.
-6. execute ´ant init´ to name your new app. This will put the new name into all needed config files
-7. if you don't intend to use Polymer you can skip the next steps
-8. execute ´polymer init´ to setup for Polymer development (see also below)
-9. CLI will ask which kind of template shall be used. Choose one.
-10. CLI will ask for name and description
-11. CLI will ask to overwrite index.html. Use 'Y' if ´init´ was called for the first time 
-12. CLI will ask to overwrite README.md. Choose 'n' to keep this documentation.
-13. You will need to adapt the ´<link rel="import"...´ statements in the html files generated. (haven't yet found a way to adapt those)
+1. unpack the zip in your favorite development folder
+1. this creates a folder with starts with 'app-template-'
+1. rename the folder to give it your new projectname
+1. execute ´npm install' to install bower and gulp support. Note: do NOT bower install yet. This will be done by Polymer CLI. However if you don't intend to use that you'll have to setup bower yourself.
+1. execute ´ant init´ to name your new app. This will put the new name into all needed config files
+ 
+After these steps a full deployable xar application has been created. Your projectname was filled into all relevant place to configure the app. Of course you
+can further refine the default controller.xql, add authentication, data and xqueries and so on.
+
+
+## Setting up Polymer
+
+Note: you do NOT have to setup bower manually. This will be done by Polymer CLI automatically.
+
+For Polymer development is [Polymer CLI](https://www.polymer-project.org/2.0/start/toolbox/set-up) is highly recommended 
+and assumed to be present for the remainder of this document. Please visit the link for installation instructions.
+
+Once you got that running execute these:
+
+1. execute ```polymer init``` to setup for Polymer development (see also below)
+1. CLI will ask which kind of template shall be used. Choose one.
+1. CLI will ask for name and description
+1. CLI will ask to overwrite index.html. Use 'Y' if ´init´ was called for the first time otherwise 'n'
+1. CLI will ask to overwrite README.md. Choose 'n' to keep this documentation or get the Polymer generated one. (you'll likely use that for own remarks anyway later)
+1. You will need to adapt the ´<link rel="import"...´ statements in the html files generated. (haven't yet found a way to adapt those)
 
 ## What gulp does for you
 
