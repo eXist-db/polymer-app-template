@@ -249,6 +249,56 @@ Nodejs is used within this project to drive the gulp tasks. These allow to:
 Please refer to the nvm page for installation instruction or use an installation method described
 on the nodejs.org homepage.
 
+# Testing Web Components
+
+Polymer comes with a testing framework called Web Component Tester (WCT).
+
+To install it just execute:
+
+```
+npm install -g web-component-tester
+```
+
+## setup a test
+
+When running Polymer-Cli to create a new element or whole project it will also
+create a 'test' directory for you containing an index.html (test suite) plus a
+file which is named similar to your new element/project with a '_test' appended.
+
+Please note that having the tests embedded in html is just one way of using WCT.
+More information can be found on the github page of [WCT](https://github.com/Polymer/web-component-tester).
+
+Depending on your project layout you should have a look into these files to check
+if the import paths are set to the correct locations.
+
+## getting Safari to work
+
+Safari does not work out of the box and needs an extra piece of software. When
+running WCT on the commandline (in the root of your project)
+
+```
+wct
+```
+
+it will spit out an error and display an url to a jar file that needs to installed
+to make Safari work. The error also gives instructions on how to install that jar.
+
+## learn more
+
+A note of caution: the video shows an older API of Polymer in the tests which is not used
+in Polymer 2 any more. However that is not relevant for the testing procedure itself. You
+just shouldn't try to copy/paste and expect it to work.
+
+There's a good polycast that explains the procedures in quite detail and is 
+highly recommended when starting to test with WCT.
+
+[Unit Testing with Web Components](https://www.youtube.com/watch?v=YBNBr9ECXLo)
+
+## more links
+
+[Testing with Travis and Saucelabs](https://www.youtube.com/watch?v=afy_EEq_4Go)
+
+
 ## Final remark
 
 If you find problems with the information provided above please use the issue-tracker and file a ticket. Same applies to
