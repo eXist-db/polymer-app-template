@@ -1,5 +1,7 @@
 DON'T CLONE THIS BUT USE THE DOWNLOAD OPTION TO SAVE AN ARCHIVE VERSION.
 
+> This version of the blueprint uses Polymer2! Once Polymer3 and its surroundings have been matured the blueprint will be updated.
+
 # Blueprint for componentized eXistdb apps
 
 ## What is it?
