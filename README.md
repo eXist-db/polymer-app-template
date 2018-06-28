@@ -30,7 +30,7 @@ What will be needed up-front:
 
 ## Setting up a new application
 
-Don't be scared by this list. It can be done in 3 minutes. Thanks to Chris Miztur there is a more visual description of the process [here](https://medium.com/@chrismisztur/exist-db-polymer-app-template-61e58b1e4000).
+Don't be scared by this list. It can be done in 3 minutes. Thanks to Chris Misztur there is a more visual description of the process [here](https://medium.com/@chrismisztur/exist-db-polymer-app-template-61e58b1e4000).
 
 1. download this blueprint as a zip
 1. unpack the zip in your favorite development folder
