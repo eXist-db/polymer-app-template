@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "brace-expansion": "^1.1.4",
+    "brace-expansion": "^2.0.1",
     "del": "^4.1.1",
     "gulp": "^3.9.1",
     "gulp-exist": "^3.0.0",
